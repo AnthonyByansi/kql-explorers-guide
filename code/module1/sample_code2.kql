@@ -1,0 +1,20 @@
+// Sample Kusto Query Language (KQL) Code
+let startDate = datetime(2023-01-01);
+let endDate = datetime(2023-12-31);
+
+// Query to analyze sales data
+let salesData =
+    MySalesTable
+    | where OrderDate >= startDate and OrderDate <= endDate
+    | extend Month = startofmonth(OrderDate)
+    | summarize TotalSales = sum(SalesAmount) by Month, ProductCategory;
+
+// Query to join sales data with product data
+let productData =
+    MyProductTable
+    | project ProductID, ProductName, ProductCategory;
+
+salesData
+| join kind=inner (productData) on ProductCategory
+| project Month, ProductName, TotalSales
+| order by Month asc, TotalSales desc
