@@ -3,7 +3,7 @@
 
 Welcome to the KQL Explorer's Guide, your comprehensive resource for mastering the Kusto Query Language (KQL) and exploring its applications in data analysis, Azure services, and more. Whether you're a beginner looking to get started or an experienced user seeking advanced insights, this guide has you covered.
 
-![KQL Explorer's Guide Logo](images/kql-logo.png)
+![KQL Explorer's Guide Logo](images/kql_logo_1.jpg)
 
 ## Table of Contents
 
